@@ -1,6 +1,53 @@
 <script>
   let lessons = [
-    { title: "", days: [], texts: [{ title: "", links: [{}] }], time: null }
+    {
+      title: "Fajr",
+      days: [],
+      topic: [
+        { description: "", links: [{}], resources: [{ title: "", links: [] }] }
+      ],
+      time: "05:15 AM"
+    },
+    {
+      title: "Rawhah",
+      days: [],
+      topic: [
+        { description: "", links: [{}], resources: [{ title: "", links: [] }] }
+      ],
+      time: "03:30 PM"
+    },
+    {
+      title: "al-Sirat al-Nabawiyyah",
+      days: [],
+      topic: [
+        { description: "", links: [{}], resources: [{ title: "", links: [] }] }
+      ],
+      time: "03:30 PM"
+    },
+    {
+      title: "Tafsir",
+      days: [],
+      topic: [
+        { description: "", links: [{}], resources: [{ title: "", links: [] }] }
+      ],
+      time: "08:30 PM"
+    },
+    {
+      title: "Qabas al-Nur al-Mubin",
+      days: [],
+      topic: [
+        { description: "", links: [{}], resources: [{ title: "", links: [] }] }
+      ],
+      time: "08:30 PM"
+    },
+    {
+      title: "Irshadat al-Suluk",
+      days: [],
+      topic: [
+        { description: "", links: [{}], resources: [{ title: "", links: [] }] }
+      ],
+      time: "06:40 PM"
+    }
   ];
 </script>
 
