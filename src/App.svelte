@@ -82,7 +82,6 @@
       time: "06:40 PM"
     }
   ];
-  // TODO: create a function to
 </script>
 
 <main>26th Annual Dowra</main>
@@ -96,3 +95,4 @@
   <div>Qabas al-Nur al-Mubin Lesson</div>
   <div>Irshadat al-Suluk</div>
 </div>
+<div>Today's date</div>
