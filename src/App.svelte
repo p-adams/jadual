@@ -46,18 +46,22 @@
     },
     {
       title: "Tafsir",
-      days: [],
+      days: [MONDAY],
       topic: [
-        { description: "", links: [{}], resources: [{ title: "", links: [] }] }
+        {
+          description: "Monday gathering to discuss meanings of Quranic verses",
+          links: [{}],
+          resources: [{ title: "", links: [] }]
+        }
       ],
       time: "08:30 PM"
     },
     {
       title: "Qabas al-Nur al-Mubin",
-      days: [],
+      days: [WEDNESDAY],
       topic: [
         {
-          description: "",
+          description: "Summary of al-Imam al-Ghazzali's Ihya Ulum al-Din",
           links: [{}],
           resources: [{ lang: "AR", title: "", links: [] }]
         }
@@ -66,9 +70,14 @@
     },
     {
       title: "Irshadat al-Suluk",
-      days: [],
+      days: [THURSDAY],
       topic: [
-        { description: "", links: [{}], resources: [{ title: "", links: [] }] }
+        {
+          description:
+            "Gathering to read Prophetic Biography and reflect on Spiritual Guidance",
+          links: [{}],
+          resources: [{ title: "", links: [] }]
+        }
       ],
       time: "06:40 PM"
     }
@@ -79,7 +88,7 @@
 <main>26th Annual Dowra</main>
 <div>July 11, 2020 to August 19, 2020</div>
 <div class="classes">
-  <h2>Lesson Schedule</h2>
+  <h2>Schedule of Daily Live Lessons</h2>
   <div>Fajr Lesson</div>
   <div>Rawhah Lesson</div>
   <div>Sirah Lesson</div>
