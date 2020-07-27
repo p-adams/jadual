@@ -95,12 +95,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid red;
   }
 
   .header_title,
   .program_dates,
   .current_date {
     text-align: center;
+  }
+  .classes_container {
+    border: 1px solid red;
+    height: 300px;
+
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 40px 40px;
+    grid-gap: 40px;
+  }
+  .classes_container div {
+    border: 1px solid red;
   }
 
   .current_date {
@@ -114,18 +127,20 @@
   </header>
   <div class="container">
     <div>
-      <div class="program_dates">July 11, 2020 to August 19, 2020</div>
-      <div class="classes">
-        <h2>Schedule of Daily Live Lessons</h2>
-        <div>Fajr Lesson</div>
-        <div>Rawhah Lesson</div>
-        <div>Sirah Lesson</div>
-        <div>Tafsir Lesson</div>
-        <div>Qabas al-Nur al-Mubin Lesson</div>
-        <div>Irshadat al-Suluk</div>
+      <div class="program_dates">
+        <div>
+          <h2>July 11, 2020 to August 19, 2020</h2>
+          <h4>Schedule of Daily Live Lessons</h4>
+        </div>
+      </div>
+      <div class="classes_container">
+        {#each lessons as lesson}
+          <div>
+            <h5>{lesson.title}</h5>
+          </div>
+        {/each}
       </div>
     </div>
-
   </div>
   <footer>
     <div class="current_date">Today's date</div>
