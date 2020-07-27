@@ -25,7 +25,7 @@
       topic: [
         {
           description:
-            "Commentary on Sheikh 'Ali Ba Ras's explanation of al-Hikam al-'Ata'iyyah along with an explanation of Imam al-Haddad's poem Rejoice, O Steadfast One",
+            "Commentary on Sheikh 'Ali Ba'Ras' explanation of al-Hikam al-'Ata'iyyah along with an explanation of Imam al-Haddad's poem Rejoice, O Steadfast One",
           links: [{}],
           resources: [{ title: "", links: [] }]
         }
@@ -84,15 +84,50 @@
   ];
 </script>
 
-<main>26th Annual Dowra</main>
-<div>July 11, 2020 to August 19, 2020</div>
-<div class="classes">
-  <h2>Schedule of Daily Live Lessons</h2>
-  <div>Fajr Lesson</div>
-  <div>Rawhah Lesson</div>
-  <div>Sirah Lesson</div>
-  <div>Tafsir Lesson</div>
-  <div>Qabas al-Nur al-Mubin Lesson</div>
-  <div>Irshadat al-Suluk</div>
+<style>
+  .app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header_title,
+  .program_dates,
+  .current_date {
+    text-align: center;
+  }
+
+  .current_date {
+    padding: 10px;
+  }
+</style>
+
+<div class="app">
+  <header>
+    <h1 class="header_title">26th Annual Dowra</h1>
+  </header>
+  <div class="container">
+    <div>
+      <div class="program_dates">July 11, 2020 to August 19, 2020</div>
+      <div class="classes">
+        <h2>Schedule of Daily Live Lessons</h2>
+        <div>Fajr Lesson</div>
+        <div>Rawhah Lesson</div>
+        <div>Sirah Lesson</div>
+        <div>Tafsir Lesson</div>
+        <div>Qabas al-Nur al-Mubin Lesson</div>
+        <div>Irshadat al-Suluk</div>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    <div class="current_date">Today's date</div>
+  </footer>
 </div>
-<div>Today's date</div>
