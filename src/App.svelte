@@ -100,12 +100,12 @@
     grid-gap: 125px;
   }
   .classes_container .lesson_item {
-    border: 1px solid white;
-    border-radius: 4px;
+    border-radius: 2px;
+    box-shadow: 2px 5px 4px #cfcccc;
     width: 120px;
-    height: 155px;
-    padding: 4px;
-    background: #e6e6fa;
+    height: 130px;
+    padding: 6px;
+    background: #f9f9f7;
     font-size: 10px;
     font-weight: 700;
   }
