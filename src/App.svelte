@@ -1,84 +1,72 @@
 <script>
-  const SATURDAY = "SATURDAY";
-  const SUNDAY = "SUNDAY";
-  const MONDAY = "MONDAY";
-  const TUESDAY = "TUESDAY";
-  const WEDNESDAY = "WEDNESDAY";
-  const THURSDAY = "THURSDAY";
-  const FRIDAY = "FRIDAY";
+  const SATURDAY = "S";
+  const SUNDAY = "U";
+  const MONDAY = "M";
+  const TUESDAY = "T";
+  const WEDNESDAY = "W";
+  const THURSDAY = "R";
+  const FRIDAY = "F";
   let lessons = [
     {
       title: "Fajr",
       days: [SATURDAY, SUNDAY, MONDAY, TUESDAY, WEDNESDAY],
-      topic: [
-        {
-          description: "Commentary on al-Muwatta of Imam Malik",
-          links: [{}],
-          resources: [{ title: "", links: [] }]
-        }
-      ],
+      topic: {
+        description: "Commentary on al-Muwatta of Imam Malik",
+        links: [{}],
+        resources: [{ title: "", links: [] }]
+      },
       time: "05:15 AM"
     },
     {
       title: "Rawhah",
       days: [SATURDAY, SUNDAY, MONDAY, TUESDAY, WEDNESDAY],
-      topic: [
-        {
-          description:
-            "Commentary on Sheikh 'Ali Ba'Ras' explanation of al-Hikam al-'Ata'iyyah along with an explanation of Imam al-Haddad's poem Rejoice, O Steadfast One",
-          links: [{}],
-          resources: [{ title: "", links: [] }]
-        }
-      ],
+      topic: {
+        description:
+          "Commentary on Sheikh 'Ali Ba'Ras' explanation of al-Hikam al-'Ata'iyyah along with an explanation of Imam al-Haddad's poem Rejoice, O Steadfast One",
+        links: [{}],
+        resources: [{ title: "", links: [] }]
+      },
       time: "03:30 PM"
     },
     {
       title: "al-Sirat al-Nabawiyyah",
       days: [THURSDAY, FRIDAY],
-      topic: [
-        {
-          description: "Jawlan al-Ruh fi Sirat RasuliLlah (Bab al-Futuh)",
-          links: [{}],
-          resources: [{ title: "", links: [] }]
-        }
-      ],
+      topic: {
+        description: "Jawlan al-Ruh fi Sirat RasuliLlah (Bab al-Futuh)",
+        links: [{}],
+        resources: [{ title: "", links: [] }]
+      },
       time: "03:30 PM"
     },
     {
       title: "Tafsir",
       days: [MONDAY],
-      topic: [
-        {
-          description: "Monday gathering to discuss meanings of Quranic verses",
-          links: [{}],
-          resources: [{ title: "", links: [] }]
-        }
-      ],
+      topic: {
+        description: "Monday gathering to discuss meanings of Quranic verses",
+        links: [{}],
+        resources: [{ title: "", links: [] }]
+      },
       time: "08:30 PM"
     },
     {
       title: "Qabas al-Nur al-Mubin",
       days: [WEDNESDAY],
-      topic: [
-        {
-          description: "Summary of al-Imam al-Ghazzali's Ihya Ulum al-Din",
-          links: [{}],
-          resources: [{ lang: "AR", title: "", links: [] }]
-        }
-      ],
+      topic: {
+        description: "Summary of al-Imam al-Ghazzali's Ihya Ulum al-Din",
+        links: [{}],
+        resources: [{ lang: "AR", title: "", links: [] }]
+      },
       time: "08:30 PM"
     },
     {
       title: "Irshadat al-Suluk",
       days: [THURSDAY],
-      topic: [
-        {
-          description:
-            "Gathering to read Prophetic Biography and reflect on Spiritual Guidance",
-          links: [{}],
-          resources: [{ title: "", links: [] }]
-        }
-      ],
+      topic: {
+        description:
+          "Gathering to read Prophetic Biography and reflect on Spiritual Guidance",
+        links: [{}],
+        resources: [{ title: "", links: [] }]
+      },
       time: "06:40 PM"
     }
   ];
@@ -109,16 +97,15 @@
     display: grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 40px 40px;
-    grid-gap: 35px;
+    grid-gap: 125px;
   }
-  .classes_container div {
+  .classes_container .lesson_item {
     border: 1px solid white;
     border-radius: 4px;
-    width: 108px;
-    padding: 3px;
+    width: 120px;
+    height: 155px;
+    padding: 4px;
     background: #e6e6fa;
-  }
-  .lesson_title {
     font-size: 10px;
     font-weight: 700;
   }
@@ -142,8 +129,18 @@
       </div>
       <div class="classes_container">
         {#each lessons as lesson}
-          <div>
-            <span class="lesson_title">{lesson.title}</span>
+          <div class="lesson_item">
+            <div class="lesson_title">{lesson.title}</div>
+            <div>
+              Days:
+              <span>
+                {#each lesson.days as day}{' '}{day}{/each}
+              </span>
+            </div>
+
+            <p>Topic: {lesson.topic.description}</p>
+
+            <span>Time: {lesson.time} Mecca</span>
           </div>
         {/each}
       </div>
