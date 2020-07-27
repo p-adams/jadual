@@ -11,7 +11,7 @@
       title: "Fajr",
       days: [SATURDAY, SUNDAY, MONDAY, TUESDAY, WEDNESDAY],
       topic: {
-        description: "Commentary on al-Muwatta of Imam Malik",
+        description: "Commentary on al-Muwatta of Imam Malik.",
         links: [{}],
         resources: [{ title: "", links: [] }]
       },
@@ -22,7 +22,7 @@
       days: [SATURDAY, SUNDAY, MONDAY, TUESDAY, WEDNESDAY],
       topic: {
         description:
-          "Commentary on Sheikh 'Ali Ba'Ras' explanation of al-Hikam al-'Ata'iyyah along with an explanation of Imam al-Haddad's poem Rejoice, O Steadfast One",
+          "Commentary on al-Hikam al-'Ata'iyyah and an explanation of Imam al-Haddad's poem Rejoice, O Steadfast One.",
         links: [{}],
         resources: [{ title: "", links: [] }]
       },
@@ -32,7 +32,7 @@
       title: "al-Sirat al-Nabawiyyah",
       days: [THURSDAY, FRIDAY],
       topic: {
-        description: "Jawlan al-Ruh fi Sirat RasuliLlah (Bab al-Futuh)",
+        description: "Jawlan al-Ruh fi Sirat RasuliLlah (Bab al-Futuh).",
         links: [{}],
         resources: [{ title: "", links: [] }]
       },
@@ -42,7 +42,7 @@
       title: "Tafsir",
       days: [MONDAY],
       topic: {
-        description: "Monday gathering to discuss meanings of Quranic verses",
+        description: "Monday gathering to discuss meanings of Quranic verses.",
         links: [{}],
         resources: [{ title: "", links: [] }]
       },
@@ -52,7 +52,7 @@
       title: "Qabas al-Nur al-Mubin",
       days: [WEDNESDAY],
       topic: {
-        description: "Summary of al-Imam al-Ghazzali's Ihya Ulum al-Din",
+        description: "Summary of al-Imam al-Ghazzali's Ihya Ulum al-Din.",
         links: [{}],
         resources: [{ lang: "AR", title: "", links: [] }]
       },
@@ -63,7 +63,7 @@
       days: [THURSDAY],
       topic: {
         description:
-          "Gathering to read Prophetic Biography and reflect on Spiritual Guidance",
+          "Gathering to read Prophetic Biography and reflect on Spiritual Guidance.",
         links: [{}],
         resources: [{ title: "", links: [] }]
       },
@@ -109,7 +109,9 @@
     font-size: 10px;
     font-weight: 700;
   }
-
+  .lesson_title {
+    font-weight: 800;
+  }
   .current_date {
     padding: 10px;
   }
