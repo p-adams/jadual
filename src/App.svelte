@@ -89,31 +89,38 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #fafafa;
   }
   .container {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
   }
 
   .header_title,
   .program_dates,
   .current_date {
+    color: #a96222;
     text-align: center;
   }
   .classes_container {
-    border: 1px solid red;
     height: 300px;
-
     display: grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 40px 40px;
-    grid-gap: 40px;
+    grid-gap: 35px;
   }
   .classes_container div {
-    border: 1px solid red;
+    border: 1px solid white;
+    border-radius: 4px;
+    width: 108px;
+    padding: 3px;
+    background: #e6e6fa;
+  }
+  .lesson_title {
+    font-size: 10px;
+    font-weight: 700;
   }
 
   .current_date {
@@ -136,7 +143,7 @@
       <div class="classes_container">
         {#each lessons as lesson}
           <div>
-            <h5>{lesson.title}</h5>
+            <span class="lesson_title">{lesson.title}</span>
           </div>
         {/each}
       </div>
