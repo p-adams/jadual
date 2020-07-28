@@ -74,78 +74,72 @@
 
 <style>
   .app {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background: #fafafa;
+    padding: 10px;
   }
   .container {
     flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 10px;
+    max-height: 425px;
+    overflow-y: auto;
   }
 
   .header_title,
-  .program_dates,
+  .header_subtitle,
   .current_date {
-    color: #a96222;
     text-align: center;
-  }
-  .classes_container {
-    height: 300px;
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 40px 40px;
-    grid-gap: 125px;
-  }
-  .classes_container .lesson_item {
-    border-radius: 2px;
-    box-shadow: 2px 5px 4px #cfcccc;
-    width: 120px;
-    height: 130px;
-    padding: 6px;
-    background: #f9f9f7;
-    font-size: 10px;
+    padding: 5px;
     font-weight: 700;
   }
-  .lesson_title {
-    font-weight: 800;
+
+  .classes_container .lesson_item {
+    background: #f5f5f5;
+    padding: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 10px;
   }
-  .current_date {
+  .lesson_title {
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .schedule_title {
     padding: 10px;
+    font-weight: 600;
+  }
+  footer {
+    border-top: 1px solid lightgray;
   }
 </style>
 
 <div class="app">
   <header>
-    <h1 class="header_title">26th Annual Dowra</h1>
+    <div class="header_title">26th Annual Dowra</div>
+    <div class="header_subtitle">July 11, 2020 to August 19, 2020</div>
   </header>
+  <div class="schedule_title">Schedule of Daily Live Lessons</div>
   <div class="container">
-    <div>
-      <div class="program_dates">
-        <div>
-          <h2>July 11, 2020 to August 19, 2020</h2>
-          <h4>Schedule of Daily Live Lessons</h4>
-        </div>
-      </div>
-      <div class="classes_container">
-        {#each lessons as lesson}
-          <div class="lesson_item">
-            <div class="lesson_title">{lesson.title}</div>
-            <div>
-              Days:
-              <span>
-                {#each lesson.days as day}{' '}{day}{/each}
-              </span>
-            </div>
+    <div class="classes_container">
 
-            <p>Topic: {lesson.topic.description}</p>
-
-            <span>Time: {lesson.time} Mecca</span>
+      {#each lessons as lesson}
+        <div class="lesson_item">
+          <div class="lesson_title">{lesson.title}</div>
+          <div>
+            Days:
+            <span>
+              {#each lesson.days as day}{' '}{day}{/each}
+            </span>
           </div>
-        {/each}
-      </div>
+
+          <p>Topic: {lesson.topic.description}</p>
+
+          <span>Time: {lesson.time} Mecca</span>
+        </div>
+      {/each}
     </div>
   </div>
   <footer>
