@@ -83,8 +83,28 @@
     flex: 1;
     display: flex;
     padding: 10px;
+  }
+
+  .classes_container {
     max-height: 425px;
     overflow-y: auto;
+    width: 750px;
+  }
+
+  .classes_container .lesson_item {
+    background: #f5f5f5;
+    padding: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .current_lesson {
+    background: #f5f5f5;
+    display: flex;
+    flex-grow: 2;
+    min-width: 300px;
+    margin-left: 4px;
   }
 
   .header_title,
@@ -95,13 +115,6 @@
     font-weight: 700;
   }
 
-  .classes_container .lesson_item {
-    background: #f5f5f5;
-    padding: 4px;
-    font-size: 10px;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
   .lesson_title {
     font-weight: 600;
     font-size: 12px;
@@ -141,6 +154,7 @@
         </div>
       {/each}
     </div>
+    <div class="current_lesson">Today's lesson</div>
   </div>
   <footer>
     <div class="current_date">Today's date</div>
