@@ -1,11 +1,12 @@
 <script>
   import lessons from "./lessons";
-  import { format, isBefore } from "date-fns";
+  import { format, isBefore, getTime, toDate } from "date-fns";
 
-  function getCurrentLesson() {
+  function getCurrentLessons() {
     const today = format(new Date(), "iiii");
     return lessons.filter(lesson => lesson.days.includes(today));
   }
+  console.log(new Date().toUTCString());
 </script>
 
 <style>
@@ -63,14 +64,27 @@
   footer {
     border-top: 1px solid lightgray;
   }
-  .active {
-    border: 1px solid #44297a;
-    border-radius: 4px;
-    padding: 5px;
-  }
+
   .current_day {
     font-weight: 800;
     color: #b20000;
+  }
+
+  .current_lesson {
+    display: block;
+    padding: 5px;
+  }
+  .current_lesson_title {
+    display: flex;
+    justify-content: space-between;
+  }
+  .current_lesson_container {
+    margin-top: 10px;
+  }
+  .current_lesson_item {
+    border: 1px solid darkgray;
+    padding: 10px;
+    margin-bottom: 5px;
   }
 </style>
 
@@ -86,7 +100,7 @@
       {#each lessons as lesson, index}
         <div class={'lesson_item'}>
           <div class="lesson_title">{lesson.title}</div>
-          <div class:active={getCurrentLesson()[index]}>
+          <div>
             Days:
             {#each lesson.days as day}
               {' '}
@@ -104,11 +118,24 @@
         </div>
       {/each}
     </div>
-    <div class="current_lesson">Today's lesson</div>
+    <div class="current_lesson">
+      <div class="current_lesson_title">
+        Latest
+        <span>{format(new Date(), 'h:mm:ss')}</span>
+      </div>
+      <div class="current_lesson_container">
+        {#each getCurrentLessons() as currentLesson}
+          <div class="current_lesson_item">
+            <div>
+              {currentLesson.title} lesson on {currentLesson.topic.description.replace(/\./g, ' ')}at{' '}{currentLesson.time}
+              Mecca time.
+            </div>
+          </div>
+        {/each}
+      </div>
+    </div>
   </div>
   <footer>
-    <div class="current_date">
-      {format(new Date(), "'Today ' MM/dd/yyyy  h:mm:ss a")}
-    </div>
+    <div class="current_date">{format(new Date(), "'Today ' MM/dd/yyyy")}</div>
   </footer>
 </div>
