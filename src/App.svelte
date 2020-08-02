@@ -1,13 +1,10 @@
 <script>
   import lessons from "./lessons";
-  import { format, isBefore, formatRelative, getTime, subDays } from "date-fns";
+  import { format, isBefore } from "date-fns";
 
   function getCurrentLesson() {
     const today = format(new Date(), "iiii");
-    const time = format(new Date(), " hh:mm:ss a");
-    const lessonsByDay = lessons.filter(lesson => lesson.days.includes(today));
-    const [mostRecent] = lessonsByDay.slice(-1);
-    return lessonsByDay;
+    return lessons.filter(lesson => lesson.days.includes(today));
   }
 </script>
 
@@ -66,6 +63,15 @@
   footer {
     border-top: 1px solid lightgray;
   }
+  .active {
+    border: 1px solid #44297a;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  .current_day {
+    font-weight: 800;
+    color: #b20000;
+  }
 </style>
 
 <div class="app">
@@ -77,14 +83,19 @@
   <div class="container">
     <div class="classes_container">
 
-      {#each lessons as lesson}
-        <div class="lesson_item">
+      {#each lessons as lesson, index}
+        <div class={'lesson_item'}>
           <div class="lesson_title">{lesson.title}</div>
-          <div>
+          <div class:active={getCurrentLesson()[index]}>
             Days:
-            <span>
-              {#each lesson.days as day}{' '}{day}{/each}
-            </span>
+            {#each lesson.days as day}
+              {' '}
+              <span
+                class={format(new Date(), 'iiii') === day ? 'current_day' : ''}>
+                {day}
+              </span>
+            {/each}
+
           </div>
 
           <p>Topic: {lesson.topic.description}</p>
