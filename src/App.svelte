@@ -1,12 +1,17 @@
 <script>
   import lessons from "./lessons";
   import { format, isBefore, getTime, toDate } from "date-fns";
+  import { formatToTimeZone } from "date-fns-timezone";
 
   function getCurrentLessons() {
     const today = format(new Date(), "iiii");
     return lessons.filter(lesson => lesson.days.includes(today));
   }
-  console.log(new Date().toUTCString());
+  console.log(
+    formatToTimeZone(new Date(), "D.M.YYYY HH:mm", {
+      timeZone: "Asia/Damascus"
+    })
+  );
 </script>
 
 <style>
@@ -121,7 +126,9 @@
     <div class="current_lesson">
       <div class="current_lesson_title">
         Latest
-        <span>{format(new Date(), 'h:mm:ss')}</span>
+        <span>
+          Time and date in Mecca {formatToTimeZone(new Date(), 'MM/DD/YYYY HH:mm a', { timeZone: 'Asia/Damascus' })}
+        </span>
       </div>
       <div class="current_lesson_container">
         {#each getCurrentLessons() as currentLesson}
@@ -136,6 +143,8 @@
     </div>
   </div>
   <footer>
-    <div class="current_date">{format(new Date(), "'Today ' MM/dd/yyyy")}</div>
+    <div class="current_date">
+      {format(new Date(), "'Today ' MM/dd/yyyy h:mm a")}
+    </div>
   </footer>
 </div>
