@@ -1,75 +1,14 @@
 <script>
-  const SATURDAY = "S";
-  const SUNDAY = "U";
-  const MONDAY = "M";
-  const TUESDAY = "T";
-  const WEDNESDAY = "W";
-  const THURSDAY = "R";
-  const FRIDAY = "F";
-  let lessons = [
-    {
-      title: "Fajr",
-      days: [SATURDAY, SUNDAY, MONDAY, TUESDAY, WEDNESDAY],
-      topic: {
-        description: "Commentary on al-Muwatta of Imam Malik.",
-        links: [{}],
-        resources: [{ title: "", links: [] }]
-      },
-      time: "05:15 AM"
-    },
-    {
-      title: "Rawhah",
-      days: [SATURDAY, SUNDAY, MONDAY, TUESDAY, WEDNESDAY],
-      topic: {
-        description:
-          "Commentary on al-Hikam al-'Ata'iyyah and an explanation of Imam al-Haddad's poem Rejoice, O Steadfast One.",
-        links: [{}],
-        resources: [{ title: "", links: [] }]
-      },
-      time: "03:30 PM"
-    },
-    {
-      title: "al-Sirat al-Nabawiyyah",
-      days: [THURSDAY, FRIDAY],
-      topic: {
-        description: "Jawlan al-Ruh fi Sirat RasuliLlah (Bab al-Futuh).",
-        links: [{}],
-        resources: [{ title: "", links: [] }]
-      },
-      time: "03:30 PM"
-    },
-    {
-      title: "Tafsir",
-      days: [MONDAY],
-      topic: {
-        description: "Monday gathering to discuss meanings of Quranic verses.",
-        links: [{}],
-        resources: [{ title: "", links: [] }]
-      },
-      time: "08:30 PM"
-    },
-    {
-      title: "Qabas al-Nur al-Mubin",
-      days: [WEDNESDAY],
-      topic: {
-        description: "Summary of al-Imam al-Ghazzali's Ihya Ulum al-Din.",
-        links: [{}],
-        resources: [{ lang: "AR", title: "", links: [] }]
-      },
-      time: "08:30 PM"
-    },
-    {
-      title: "Irshadat al-Suluk",
-      days: [THURSDAY],
-      topic: {
-        description:
-          "Gathering to read Prophetic Biography and reflect on Spiritual Guidance.",
-        links: [{}],
-        resources: [{ title: "", links: [] }]
-      },
-      time: "06:40 PM"
-    }
-  ];
+  import lessons from "./lessons";
+  import { format, isBefore, formatRelative, getTime, subDays } from "date-fns";
+
+  function getCurrentLesson() {
+    const today = format(new Date(), "iiii");
+    const time = format(new Date(), " hh:mm:ss a");
+    const lessonsByDay = lessons.filter(lesson => lesson.days.includes(today));
+    const [mostRecent] = lessonsByDay.slice(-1);
+    return lessonsByDay;
+  }
 </script>
 
 <style>
@@ -157,6 +96,8 @@
     <div class="current_lesson">Today's lesson</div>
   </div>
   <footer>
-    <div class="current_date">Today's date</div>
+    <div class="current_date">
+      {format(new Date(), "'Today ' MM/dd/yyyy  h:mm:ss a")}
+    </div>
   </footer>
 </div>
